@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import ExampleComponent from '../components/ExampleComponent'
-import home from '../components/home'
+import ExampleComponent from '../components/ExampleComponent';
+import home from '../components/home';
+import Create from '../components/Create';
 
 Vue.use(Router);
 
@@ -17,6 +18,11 @@ export default new Router({
             path: '/home',
             name: 'home',
             component: home
+        },
+        {
+            path: '/create',
+            name: 'create',
+            component: Create
         }
     ]
 })

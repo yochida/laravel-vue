@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,5 @@
 Route::any('{all}', function () {
     return view('welcome');
 })->where(['all' => '.*']);
+
+Route::resource('users', 'UserController');
