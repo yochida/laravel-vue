@@ -9,23 +9,34 @@
         <th>edit</th>
         <th>del</th>
       </tr>
-      <tr  v-for="item in users">
+      <tr v-for="item in users">
         <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
         <td>{{item.city}}</td>
-        <td>{{item.city}}</td>
-        <td><a href="#">edit</a></td>
-        <td><a href="#">del</a></td>
+        <td>
+          <a href="/edit" v-on:click="edit(item)">edit</a>
+        </td>
+        <td>
+          <a href="#">del</a>
+        </td>
       </tr>
     </div>
     <br>
     <a href="/create" class="btn btn-primary">create</a>
+
+    <Edit item="asdfasd"></Edit>
   </div>
 </template>
 
 <script>
 import { async } from "q";
+import Edit from '../components/Edit.vue';
+
 export default {
   name: "home",
+  components: {
+    Edit
+  },
   data() {
     return {
       users: []
@@ -47,15 +58,19 @@ export default {
       const result = await res.json();
       this.users = result;
       console.log(result);
+    },
+    edit: function(item) {
+      console.log(item.id);
+      console.log(item.name);
+      console.log(item.city);
     }
   }
 };
 </script>
 
 <style>
-
-body{
-    padding: 20px;
+body {
+  padding: 20px;
 }
 
 th {

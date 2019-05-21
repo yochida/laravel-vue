@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import ExampleComponent from '../components/ExampleComponent';
 import home from '../components/home';
 import Create from '../components/Create';
+import Edit from '../components/Edit';
 
 Vue.use(Router);
 
@@ -23,6 +24,11 @@ export default new Router({
             path: '/create',
             name: 'create',
             component: Create
+        },
+        {
+            path: '/edit',
+            name: 'edit',
+            component: Edit
         }
     ]
 })
